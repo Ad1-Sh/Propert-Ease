@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 export default function Header() {
     const location = useLocation()
     const navigate = useNavigate()
+  
    function pathMatchRoute(route){
     if(route === location.pathname){
         return true
@@ -24,21 +25,21 @@ export default function Header() {
             </div>
             <div>
                 <ul className='flex space-x-10'>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400
-                        border-b-[3px] border-b-transparent
-                        ${pathMatchRoute("/") && "text-black border-b-teal-800"}`}
+                    <li className={`cursor-pointer py-3 text-sm font-semibold
+                        border-b-[3px] 
+                        ${pathMatchRoute("/") ? "text-black border-b-[3px] border-[#0084A8]" : "text-gray-400 border-b-[3px]"}`}
                         onClick={()=>navigate("/")}>
                             Home
                         </li>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400
-                        border-b-[3px] border-b-transparent
-                        ${pathMatchRoute("/offers") && "text-black border-b-teal-800"}`}
+                    <li className={`cursor-pointer py-3 text-sm font-semibold
+                        border-b-[3px] 
+                        ${pathMatchRoute("/offers") ? "text-black border-b-[3px] border-[#0084A8]" : "text-gray-400 border-b-[3px]"}`}
                         onClick={()=>navigate("/offers")}>
                             Offers
                         </li>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400
-                        border-b-[3px] border-b-transparent
-                        ${pathMatchRoute("/sign-in") && "text-black border-b-teal-800"}`}
+                    <li className={`cursor-pointer py-3 text-sm font-semibold
+                        border-b-[3px] 
+                        ${pathMatchRoute("/sign-in") ? "text-black border-b-[3px] border-[#0084A8]" : "text-gray-400 border-b-[3px]"}`}
                         onClick={()=>navigate("/sign-in")}>
                             Sign in
                         </li>
